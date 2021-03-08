@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting Smart Contract</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+        <script src="./index.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body style="background-color: #fafafa;">
+        <nav class="navbar navbar-inverse" style="border-radius: 0px;background-color: white;border-color: white white #d3d3d3 white;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar" style="background-color: black !important;"></span>
+                        <span class="icon-bar" style="background-color: black !important;"></span>
+                        <span class="icon-bar" style="background-color: black !important;"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="font-family: 'Zhi Mang Xing', cursive;color: black;font-size: 30px;">SmartContract</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="vote.html" style="color: black !important;"><i class="material-icons">group_add</i></a></li>
+                        <li><a href="chart.html" style="color: black !important;"><i class="material-icons">graphic_eq</i></a></li>
+                        <li><a href="report.html" style="color: black !important;"><i class="material-icons">report</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid" style="text-align: center;">
+          <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-3" style="padding:5px;border-radius: 5px;box-shadow: 5px 5px 2px #aaaaaa;background-color: white;">
+              <div class="card" style="justify-content: center;">
+                <img class="card-img-top" src="pp.png" alt="Card image cap" style="max-width: 100%;max-height: 100%;">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>Candidate 1</strong></h4>
+                  <p class="card-text">
+                    Lahir : Jakarta, 24 Febuari 1960 <br>
+                    Pasangan : Ibu Kandidat 1 <br>
+                    Partai : Kandidat 1 <br>
+                    Anak : Anak Pertama, Anak Kedua <br><br>
+                    Visi : <br>
+                    "Terwujudnya negara maju yang berdaulat, mandiri, dan berkepribadian, berlandaskan gotong-royong" <br>
+                    Misi : <br>
+                    1. Peningkatan kualitas manusia. <br>
+                    2. Mencapai lingkungan hidup. <br>
+                    3. Pengelolaan sampah bersih.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3" style="padding:5px;border-radius: 5px;box-shadow: 5px 5px 2px #aaaaaa;background-color: white;">
+              <div class="card" style="justify-content: center;">
+                <img class="card-img-top" src="pp.png" alt="Card image cap" style="max-width: 100%;max-height: 100%;">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>Candidate 2</strong></h4>
+                  <p class="card-text">
+                    Lahir : Bandung, 12 Juli 1968 <br>
+                    Pasangan : Ibu Kandidat 2 <br>
+                    Partai : Kandidat 2 <br>
+                    Anak : Anak Ketiga, Anak Keempat <br><br>
+                    Visi : <br>
+                    "Terwujudnya negara maju yang berdaulat, mandiri, dan berkepribadian, berlandaskan gotong-royong" <br>
+                    Misi : <br>
+                    1. Peningkatan kualitas manusia. <br>
+                    2. Mencapai lingkungan hidup. <br>
+                    3. Pengelolaan sampah bersih.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3" style="padding:5px;border-radius: 5px;box-shadow: 5px 5px 2px #aaaaaa;background-color: white;">
+              <div class="card" style="justify-content: center;">
+                <img class="card-img-top" src="pp.png" alt="Card image cap" style="max-width: 100%;max-height: 100%;">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>Candidate 3</strong></h4>
+                  <p class="card-text">
+                    Lahir : Surabaya, 07 Desember 1963 <br>
+                    Pasangan : Ibu Kandidat 3 <br>
+                    Partai : Kandidat 3 <br>
+                    Anak : Anak Kelima, Anak Keenam <br><br>
+                    Visi : <br>
+                    "Terwujudnya negara maju yang berdaulat, mandiri, dan berkepribadian, berlandaskan gotong-royong" <br>
+                    Misi : <br>
+                    1. Peningkatan kualitas manusia. <br>
+                    2. Mencapai lingkungan hidup. <br>
+                    3. Pengelolaan sampah bersih.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container" style="margin-top: 50px;margin-bottom: 100px;text-align: center;">
+            <h1>Choose Your Candidate</h1>
+
+            <div class="form-group">
+              <div class="col-md-2 col-md-offset-2" style="padding-left: 0px;">
+                <input type="text" id="inputNIK" placeholder="NIK" class="form-control">
+              </div>
+              <div class="col-md-2" style="padding-left: 0px;">
+                <select id="selectProvince" class="form-control">
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Bandung">Bandung</option>
+                    <option value="Surabaya">Surabaya</option>
+                    <option value="Bali">Bali</option>
+                </select>
+              </div>
+              <div class="col-md-2" style="padding-left: 0px;">
+                <select id="selectCandidate" class="form-control">
+                    <option value="Candidate1">Candidate 1</option>
+                    <option value="Candidate2">Candidate 2</option>
+                    <option value="Candidate3">Candidate 3</option>
+                </select>
+              </div>
+              <div class="col-md-1">
+                <a onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+              </div>
+              <div class="col-md-12" style="padding-left: 0px;margin-top: 15px;">
+                <span>Your NIK : </span>
+                <span id="txNik">Please choose a candidate</span>
+              </div>
+              <div class="col-md-12" style="padding-left: 0px;">
+                <span>Your Province : </span>
+                <span id="txProvince">Please choose a candidate</span>
+              </div>
+              <div class="col-md-12" style="padding-left: 0px;">
+                <span>You vote for : </span>
+                <span id="txVote">Please choose a candidate</span>
+              </div>
+              <div class="col-md-12" style="padding-left: 0px;">
+                <span>Your Transaction Hash : </span>
+                <span id="txHash">Please choose a candidate</span>
+              </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    </script>
+</html>
